@@ -1,0 +1,42 @@
+# Terraform files
+.terraform
+terraform.tfstate
+terraform.tfvars
+*.tfstate*
+.terragrunt-cache
+
+# OS X files
+.history
+.DS_Store
+
+# IntelliJ files
+.idea_modules
+*.iml
+*.iws
+*.ipr
+.idea/
+.vscode/
+build/
+*/build/
+out/
+
+# Go best practices dictate that libraries should not include the vendor directory
+vendor
+
+# Test binaries
+examples/ssh-grunt/packer/bin
+codegen/generate-aws-config/generate-aws-config
+codegen/generate-aws-guardduty/generate-aws-guardduty
+codegen/generate-ebs-encryption/generate-ebs-encryption
+codegen/generate-multiregion-kms-grant/generate-multiregion-kms-grant
+codegen/generate-multiregion-kms/generate-multiregion-kms
+
+# Don't commit tls-cert-private outputs
+modules/tls-cert-private/output
+
+# Used by Terratest
+.test-data
+
+# Ignore Terraform lock files, as we want to test the Terraform code in these repos with the latest provider
+# versions.
+.terraform.lock.hcl

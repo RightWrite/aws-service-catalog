@@ -8,11 +8,18 @@ variable "aws_account_id" {
 }
 
 variable "create_read_only_role" {
-  default = ""
+  description = "Whether to create a read-only role for the account."
+  type        = bool
+  default     = false
 }
 
 variable "tags" {
   description = "A map of tags to apply to the IAM roles."
   type        = map(string)
   default     = {}
+}
+variable "read_only_access_iam_role_name" {
+  description = "What to name the read-only access IAM role"
+  type        = string
+  default     = "allow-read-only-access-from-saml"
 }
